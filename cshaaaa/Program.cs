@@ -14,32 +14,38 @@ namespace cshaaaa {
             int max = 0;
             int min = 1000000000;
 
-            Console.Write("kérem adja meg a darabszámot: ");
-            szamlalo = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < szamlalo; i++) 
+            try 
             {
-                Console.Write("kérem adjon meg egy számot: ");
-                ertek = Convert.ToInt32(Console.ReadLine());
-                lista.Add(ertek);
-                //szamlalo++;
-            }    
-            for (int i = 0; i < szamlalo; i++) 
-            {
-                if (lista[i] > max)
-                {
-                    max = lista[i];
+                Console.Write("kérem adja meg a darabszámot: ");
+                szamlalo = Convert.ToInt32(Console.ReadLine());
+                for (int i = 0; i < szamlalo; i++) {
+                    Console.Write("kérem adjon meg egy számot: ");
+                    ertek = Convert.ToInt32(Console.ReadLine());
+                    lista.Add(ertek);
+                    //szamlalo++;
                 }
-            }
-            for (int i = 0; i < szamlalo; i++) 
-            {
-                if (lista[i] < min) 
-                {
-                    min = lista[i];
+                for (int i = 0; i < szamlalo; i++) {
+                    if (lista[i] > max) {
+                        max = lista[i];
+                    }
                 }
+                for (int i = 0; i < szamlalo; i++) {
+                    if (lista[i] < min) {
+                        min = lista[i];
+                    }
+                }
+                Console.WriteLine("A legnagyobb szám a {0}", max);
+                Console.WriteLine("A legkisebb szám a {0}", min);
+                
             }
-            Console.WriteLine("A legnagyobb szám a {0}",max);
-            Console.WriteLine("A legkisebb szám a {0}",min);
+            catch (Exception) 
+            {
+                Console.WriteLine("Kérlek legközelebb számokat adj meg :D");
+            }
             Console.ReadLine();
+
+
+
         }
     }
 }
